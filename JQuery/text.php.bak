@@ -1,0 +1,7 @@
+<?php
+    if($_get['url']=='ycku'){
+  echo 'this is a test';}
+  else{
+    echo 'aaaa';
+  }
+?>

@@ -1,0 +1,14 @@
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,pre,form,input,textarea,th,td,select{margin:0;padding:0;}
+em{font-style: normal;  }
+li{list-style: none;}
+a{text-decoration: none;}
+img{border: none;vertical-align: top;}
+table{border-collapse: collapse;}
+textarea{resize: none;overflow:auto;}
+.clear{zoom:1;}
+.clear:after{content: "";display: block;clear:both;}
+body{background: #ccc;}
+#xuan{width:500px;height:200px;margin:0 auto;position: relative;}
+#xuan ul{position: absolute;left:0;top:0;height:200px;border:1px solid red;width:3000px;}
+#xuan ul li{width:500px;padding: 0 15px;height:200px;float:left;}
+#xuan ul li img{width:470px;height:200px;}

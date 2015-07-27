@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript">
+            /*var name="The Window";
+            var object={
+                name:"my object",
+                getName:function(){
+                    return function(){
+                        return this.name;
+                    }
+
+                }
+            };
+            alert(object.getName()());
+*/
+//            (function a(i){
+//                for(i=0;i<10;i++){
+//                    alert(function(){
+//                        return i+1;
+//                    })
+//                }
+//            })(i);
+            function aa(){
+                var b=10;
+                return function cc(){
+                    b++;
+                    alert(b);
+                }
+            }
+            aa()();
+
+
+                         
+
+
+       /* function a() {
+            var i = 0;
+            function b() { alert(++i); }
+            return b;
+        }*/
+
+
+            /*var name = "The Window";
+　　          var object = {
+　　　　        name : "My Object",
+　　　　getNameFunc : function(){
+            　　　　　　return function(){
+                    　　　　　　　　return this.name;
+　　　　　};
+　　　　}
+        };
+        alert(object.getNameFunc()());*/
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

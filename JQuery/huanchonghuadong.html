@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html charset=utf-8"/>
+    <script type="text/javascript" src="jquery-1.11.2.js"></script>
+    <style>
+        body{background: #ccc;}
+
+        .clear{zoom: 1;}
+        .clear:after{content: "";display: block;clear:both;}
+        *{margin: 0;padding: 0;}
+        #box{margin: 100px auto;width:900px;height:500px;}
+        ul{position: relative;}
+        ul li{list-style:none;width:148px;height:60px;float:left;border:1px royalblue solid;text-align: center;line-height: 60px;}
+        .small{height:8px;position: absolute;left:0px;top:52px;background: red;}
+    </style>
+    <script type="text/javascript">
+        $(function() {
+            var aLi = $('ul').children();
+            var oUl=document.getElementsByTagName('ul')[0];
+            var oLi=oUl.getElementsByTagName('li');
+            alert(oUl.offsetLeft);
+            alert(aLi.eq(5).position().left);
+            //var oLi=aLi[5];
+            //alert(aLi.length);
+            for (var i = 0; i < (aLi.length - 1); i++) {
+                aLi.eq(i).mouseover(function () {
+                    //alert($(this).position().left);
+
+                    move($('.small'),$(this).position().left);
+                })
+            }
+            var iSpeed=0;
+            function move(obj,iTarget) {
+                clearInterval(obj.timer);
+                obj.timer=setInterval(function(){
+                    document.title=obj.position().left;
+                    iSpeed+=(iTarget-obj.position().left)/5;
+                    iSpeed*=0.7;
+                    alert(obj.position().left);
+                    obj.css('left',obj.position().left+iSpeed+'px');
+                   //document.title=obj.position().left+'|'+iTarget;
+                },30)
+            }
+        })
+    </script>
+</head>
+<body>
+<div id="box">
+    <ul class="clear">
+        <li>首页</li>
+        <li>次页</li>
+        <li>第三页</li>
+        <li>第四页</li>
+        <li>第五页</li>
+        <li class="small"></li>
+    </ul>
+</div>
+</body>
+</html>

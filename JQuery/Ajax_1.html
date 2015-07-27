@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Ajax第一课</title>
+    <meta http-equiv="content-type" content="text/html charset=utf-8"/>
+    <script type="text/javascript" src="jquery-1.11.2.js"></script>
+    <style>
+        #p1{display: none;}
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            $('form input[type=button]').click(function(){
+               /* $.ajax(
+                        {
+                            type:'post',
+                            url:'http://www.goosdfsdfsdfsdgle.com/text.php',
+                            data:*//*{
+                              user:$('form input[name=user]').val(),
+                                mail:$('form input[name=mail]').val()
+                               // $('form').serialize()
+                            },*//*
+                            $('form').serialize(),
+                            success:function(response,status,xhr){
+                                $('.txt').html(response);
+                            }
+                        }
+                );
+                $(document).ajaxStart(function(){
+                    $('#p1').show();
+                }).ajaxStop(function(){
+                    $('#p1').hide();
+                })*/
+                $.post('text1.php',$('form').serialize());
+                $(document).ajaxSuccess(function(response,status,xhr){
+                    alert('a');
+                }).error(function(){alert('ab')});
+
+            })
+        })
+    </script>
+    <style type="text/css">
+        .txt{border:1px red solid;width:300px; height:300px;}
+    </style>
+</head>
+<body>
+<form>
+用户名：<input type="text" name="user"/>
+邮箱：<input type="text" name="mail"/>
+<input type="button" value="提交"/>
+</form>
+<span id="p1">正在加载中。。。</span>
+<div class="txt"></div>
+</body>
+</html>
